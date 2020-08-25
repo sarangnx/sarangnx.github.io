@@ -3,10 +3,10 @@ import App from './App.vue';
 import './registerServiceWorker';
 import router from './router';
 import store from './store';
-import fontawesome from '@/plugins/fontawesome';
+import plugins from '@/plugins';
 
 createApp(App)
     .use(store)
     .use(router)
-    .use(fontawesome)
+    .use(plugins)
     .mount('#app');
