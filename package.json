@@ -12,6 +12,7 @@
     "bootstrap": "^4.5.2",
     "core-js": "^3.6.5",
     "register-service-worker": "^1.7.1",
+    "rfs": "^9.0.3",
     "vue": "^3.0.0-0",
     "vue-router": "^4.0.0-0",
     "vuex": "^4.0.0-0"
