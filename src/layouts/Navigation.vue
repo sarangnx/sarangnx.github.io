@@ -5,7 +5,7 @@
         <div class="nav-logo">
             <img src="/img/sg.svg" />
         </div>
-        <div class="links">
+        <div v-if="$bp.smAndUp" class="links">
             <router-link class="px-2" to="/about">About</router-link>
             <router-link class="px-2" to="/about">Skills</router-link>
             <router-link class="px-2" to="/about">Works</router-link>
