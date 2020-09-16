@@ -1,18 +1,41 @@
 <template>
-    <div class="home">
-        <img alt="Vue logo" src="../assets/logo.png" />
-        <HelloWorld msg="Welcome to Your Vue.js App" />
+    <div class="home d-flex flex-column flex-md-row justify-content-around">
+        <div class="text-container col-12 col-sm-6">
+            <span>I'm Sarang</span>
+            <span>Full Stack Developer</span>
+        </div>
+        <div class="image-container col-12 col-md-6 col-lg-4">
+            <img src="/img/circle.svg" />
+        </div>
     </div>
 </template>
 
 <script>
-// @ is an alias to /src
-import HelloWorld from '@/components/HelloWorld.vue';
-
 export default {
-    name: 'Home',
-    components: {
-        HelloWorld
-    }
+    name: 'Home'
 };
 </script>
+
+<style lang="scss">
+.home {
+    height: 100%;
+}
+
+.image-container {
+    justify-content: flex-end;
+    img {
+        width: 100%;
+    }
+}
+
+.text-container {
+    color: white;
+}
+
+.text-container,
+.image-container {
+    flex-shrink: 1;
+    display: flex;
+    flex-direction: column;
+}
+</style>
