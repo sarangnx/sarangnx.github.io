@@ -1,5 +1,34 @@
+@font-face {
+    // Variable Font
+    font-family: 'Roboto Mono';
+    src: url('/fonts/roboto-mono/RobotoMono-VariableFont_wght.ttf');
+}
+
 html,
 body,
 #app {
     height: 100%;
+    font-family: 'Roboto Mono';
+}
+
+:root {
+    --backgound-color: #0f0f0f;
+    --nav-bg: #000000;
+}
+
+body {
+    background: var(--backgound-color);
+}
+
+#app {
+    display: flex;
+    flex-direction: column;
+
+    main {
+        flex-grow: 1;
+    }
+}
+
+.text-white {
+    color: white !important;
 }
