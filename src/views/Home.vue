@@ -1,8 +1,8 @@
 <template>
     <div class="home d-flex flex-column flex-md-row justify-content-around">
         <div class="text-container col-12 col-sm-6">
-            <span>I'm Sarang</span>
-            <span>Full Stack Developer</span>
+            <span class="title">I'm Sarang</span>
+            <span class="sub-title">Full Stack Developer</span>
         </div>
         <div class="image-container col-12 col-md-6">
             <img src="/img/me.png" />
@@ -17,6 +17,8 @@ export default {
 </script>
 
 <style lang="scss">
+@import '~rfs/scss';
+
 .home {
     height: 100%;
 }
@@ -30,6 +32,17 @@ export default {
 
 .text-container {
     color: white;
+    align-items: center;
+    justify-content: center;
+
+    .title {
+        @include font-size(54px);
+    }
+
+    .sub-title {
+        @include font-size(16px);
+        color: #969696;
+    }
 }
 
 .text-container,
