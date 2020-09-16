@@ -4,8 +4,8 @@
             <span>I'm Sarang</span>
             <span>Full Stack Developer</span>
         </div>
-        <div class="image-container col-12 col-md-6 col-lg-4">
-            <img src="/img/circle.svg" />
+        <div class="image-container col-12 col-md-6">
+            <img src="/img/me.png" />
         </div>
     </div>
 </template>
