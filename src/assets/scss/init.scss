@@ -9,6 +9,7 @@ body,
 #app {
     height: 100%;
     font-family: 'Roboto Mono';
+    color: white;
 }
 
 :root {
@@ -24,8 +25,4 @@ body {
 #app {
     display: flex;
     flex-direction: column;
-}
-
-.text-white {
-    color: white !important;
 }
