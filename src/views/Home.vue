@@ -1,6 +1,6 @@
 <template>
     <div class="home d-flex flex-column flex-md-row justify-content-around">
-        <div class="text-container col-12 col-sm-6">
+        <div class="text-container col-12 col-md-6">
             <span class="title">I'm Sarang</span>
             <span class="sub-title">Full Stack Developer</span>
         </div>
