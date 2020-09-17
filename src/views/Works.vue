@@ -1,12 +1,12 @@
 <template>
-    <div class="about container mt-5">
-        <h1>About Me</h1>
+    <div class="works container mt-5">
+        <h1>Works</h1>
         <p></p>
     </div>
 </template>
 
 <style lang="scss">
-.about {
+.works {
     h1 {
         font-weight: bold;
     }
