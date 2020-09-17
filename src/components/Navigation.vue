@@ -27,7 +27,7 @@
     background: var(--nav-bg);
 
     .links a {
-        text-decoration: none;
+        text-decoration: none !important;
         color: white;
         font-family: 'Roboto Mono';
     }
