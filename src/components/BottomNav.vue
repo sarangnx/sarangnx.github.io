@@ -17,6 +17,10 @@
 
 <style lang="scss">
 .bottom-nav {
+    position: fixed;
+    bottom: 0px;
+    height: 60px;
+    width: 100%;
     background: var(--nav-bg);
     display: flex;
     justify-content: space-around;
