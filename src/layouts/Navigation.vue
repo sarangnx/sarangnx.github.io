@@ -2,9 +2,9 @@
     <nav
         class="top-nav px-3 py-4 d-flex justify-content-between align-items-center"
     >
-        <div class="nav-logo">
+        <router-link class="nav-logo" to="/">
             <img src="/img/sg.svg" />
-        </div>
+        </router-link>
         <div v-if="$bp.smAndUp" class="links">
             <router-link class="px-2" to="/about">About</router-link>
             <router-link class="px-2" to="/about">Skills</router-link>
@@ -17,7 +17,7 @@
 <style lang="scss">
 .nav-logo {
     img {
-        height: calc(1em + 1.5vw);
+        height: calc(1rem + 1.5vw);
         width: auto;
         min-height: 25px;
     }
