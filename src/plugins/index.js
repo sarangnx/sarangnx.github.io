@@ -1,4 +1,4 @@
-import './bootstrap';
+import './styles';
 import fontawesome from './fontawesome';
 import breakpoints from './breakpoints';
 
