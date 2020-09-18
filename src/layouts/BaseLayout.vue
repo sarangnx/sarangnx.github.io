@@ -21,6 +21,8 @@ export default {
     // 3rem = py-4 in top nav
     // max(26px, calc(1rem + 1.5vw)) = height of logo
     height: calc(100% - 50px - 3rem - max(26px, calc(1rem + 1.5vw)));
-    margin-bottom: 50px;
+    > div:last-child {
+        margin-bottom: 50px;
+    }
 }
 </style>
