@@ -20,7 +20,10 @@ export default {
 @import '~rfs/scss';
 
 .home {
-    height: 100%;
+    height: var(--desktop-full-height);
+    .mobile-view > & {
+        height: var(--mobile-full-height);
+    }
 }
 
 .image-container {
