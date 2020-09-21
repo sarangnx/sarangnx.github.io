@@ -21,13 +21,16 @@ body {
     --backgound-color: #151515;
     --nav-bg: #000000;
     --green: #1ea044;
+
+    // calculate vh because it is broken in mobile.
+    --vh: 1vh;
+
     // 60px = height of bottom nav
     // 3rem = py-4 in top nav
     // max(26px, calc(1rem + 1.5vw)) = height of logo
     --mobile-full-height: calc(
-        100vh - 60px - 3rem - max(26px, calc(1rem + 1.5vw))
+        var(--vh) * 100 - 60px - 3rem - max(26px, calc(1rem + 1.5vw))
     );
-
     --desktop-full-height: calc(100vh - 3rem - max(26px, calc(1rem + 1.5vw)));
 }
 
