@@ -1,7 +1,5 @@
 <template>
-    <nav
-        class="top-nav px-3 py-4 d-flex justify-content-between align-items-center"
-    >
+    <nav class="top-nav px-3 py-4 d-flex justify-content-between align-items-center">
         <router-link class="nav-logo" to="/">
             <img src="/img/sg.svg" />
         </router-link>

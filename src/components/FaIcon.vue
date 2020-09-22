@@ -20,13 +20,7 @@ export default {
     },
     computed: {
         type() {
-            const type = this.regular
-                ? 'far'
-                : this.solid
-                ? 'fas'
-                : this.brand
-                ? 'fab'
-                : 'fas';
+            const type = this.regular ? 'far' : this.solid ? 'fas' : this.brand ? 'fab' : 'fas';
 
             return type;
         },

@@ -40,12 +40,8 @@ export default {
 
             const xs = this.width <= this.thresholds.xs;
             const sm = this.width <= this.thresholds.sm && !xs;
-            const md =
-                this.width <= this.thresholds.md - this.vScrollBarWidth &&
-                !(sm || xs);
-            const lg =
-                this.width <= this.thresholds.lg - this.vScrollBarWidth &&
-                !(md || sm || xs);
+            const md = this.width <= this.thresholds.md - this.vScrollBarWidth && !(sm || xs);
+            const lg = this.width <= this.thresholds.lg - this.vScrollBarWidth && !(md || sm || xs);
             const xl = this.width >= this.thresholds.lg - this.vScrollBarWidth;
 
             this.xs = xs;
@@ -68,11 +64,7 @@ export default {
         }
 
         // update breakpoints on resize
-        window.addEventListener(
-            'resize',
-            update.bind(app.config.globalProperties.$bp),
-            { passive: true }
-        );
+        window.addEventListener('resize', update.bind(app.config.globalProperties.$bp), { passive: true });
 
         // init
         update.apply(app.config.globalProperties.$bp);

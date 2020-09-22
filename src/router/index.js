@@ -3,38 +3,32 @@ import { createRouter, createWebHistory } from 'vue-router';
 const routes = [
     {
         path: '/',
-        component: () =>
-            import(/* webpackChunkName: "layout" */ '@/layouts/BaseLayout'),
+        component: () => import(/* webpackChunkName: "layout" */ '@/layouts/BaseLayout'),
         children: [
             {
                 path: '',
                 name: 'Home',
-                component: () =>
-                    import(/* webpackChunkName: "home" */ '@/views/Home')
+                component: () => import(/* webpackChunkName: "home" */ '@/views/Home')
             },
             {
                 path: '/about',
                 name: 'About',
-                component: () =>
-                    import(/* webpackChunkName: "about" */ '@/views/About')
+                component: () => import(/* webpackChunkName: "about" */ '@/views/About')
             },
             {
                 path: '/skills',
                 name: 'Skills',
-                component: () =>
-                    import(/* webpackChunkName: "skills" */ '@/views/Skills')
+                component: () => import(/* webpackChunkName: "skills" */ '@/views/Skills')
             },
             {
                 path: '/works',
                 name: 'Works',
-                component: () =>
-                    import(/* webpackChunkName: "works" */ '@/views/Works')
+                component: () => import(/* webpackChunkName: "works" */ '@/views/Works')
             },
             {
                 path: '/contact',
                 name: 'Contact',
-                component: () =>
-                    import(/* webpackChunkName: "contact" */ '@/views/Contact')
+                component: () => import(/* webpackChunkName: "contact" */ '@/views/Contact')
             }
         ]
     }

@@ -19,20 +19,10 @@
             </div>
         </div>
         <div class="social">
-            <a
-                href="https://github.com/sarangnx"
-                title="GitHub Profile"
-                target="_blank"
-                class="github"
-            >
+            <a href="https://github.com/sarangnx" title="GitHub Profile" target="_blank" class="github">
                 <fa-icon icon="github" brand />
             </a>
-            <a
-                href="https://gitlab.com/sarangnx"
-                title="GitLab Profile"
-                target="_blank"
-                class="gitlab"
-            >
+            <a href="https://gitlab.com/sarangnx" title="GitLab Profile" target="_blank" class="gitlab">
                 <fa-icon icon="gitlab" brand />
             </a>
             <a
@@ -43,11 +33,7 @@
             >
                 <fa-icon icon="stack-overflow" brand />
             </a>
-            <a
-                title="Discord - itachi#8350"
-                class="discord"
-                @click.prevent="copyToClipboard"
-            >
+            <a title="Discord - itachi#8350" class="discord" @click.prevent="copyToClipboard">
                 <fa-icon icon="discord" brand />
             </a>
         </div>
