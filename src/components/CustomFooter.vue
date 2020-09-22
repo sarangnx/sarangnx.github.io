@@ -18,13 +18,57 @@
                 <router-link to="/contact">Contact Me</router-link>
             </div>
         </div>
-        <div class="center">
+        <div class="social">
+            <a
+                href="https://github.com/sarangnx"
+                title="GitHub Profile"
+                target="_blank"
+                class="github"
+            >
+                <fa-icon icon="github" brand />
+            </a>
+            <a
+                href="https://gitlab.com/sarangnx"
+                title="GitLab Profile"
+                target="_blank"
+                class="gitlab"
+            >
+                <fa-icon icon="gitlab" brand />
+            </a>
+            <a
+                href="https://stackoverflow.com/users/9155456/srx"
+                title="Stack Overflow Profile"
+                target="_blank"
+                class="stackoverflow"
+            >
+                <fa-icon icon="stack-overflow" brand />
+            </a>
+            <a
+                href="itachi#8350"
+                title="Discord"
+                class="discord"
+                @click.prevent="copyToClipboard"
+            >
+                <fa-icon icon="discord" brand />
+            </a>
+        </div>
+        <div class="made-with">
             <span>made with vue.js</span>
             <span>© srng.dev</span>
         </div>
-        <div class="bottom"></div>
+        <div class="red-line"></div>
     </footer>
 </template>
+
+<script>
+export default {
+    methods: {
+        copyToClipboard() {
+            navigator.clipboard.writeText('itachi#8350');
+        }
+    }
+};
+</script>
 
 <style lang="scss">
 @import '~rfs/scss';
@@ -69,7 +113,22 @@ footer {
         }
     }
 
-    .center {
+    .social {
+        display: flex;
+        justify-content: center;
+        padding: 1rem;
+        a {
+            color: #505050;
+            @include padding-left('2rem');
+            @include padding-right('2rem');
+            @include font-size('26px');
+            &:hover {
+                color: #ffffff;
+            }
+        }
+    }
+
+    .made-with {
         background: #1a1a1a;
         @include padding(0.75rem);
         font-size: 12px;
@@ -77,7 +136,7 @@ footer {
         justify-content: space-between;
     }
 
-    .bottom {
+    .red-line {
         width: 100%;
         height: 10px;
         background: #bd0000;
