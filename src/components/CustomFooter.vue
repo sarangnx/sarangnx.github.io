@@ -44,8 +44,7 @@
                 <fa-icon icon="stack-overflow" brand />
             </a>
             <a
-                href="itachi#8350"
-                title="Discord"
+                title="Discord - itachi#8350"
                 class="discord"
                 @click.prevent="copyToClipboard"
             >
@@ -64,7 +63,9 @@
 export default {
     methods: {
         copyToClipboard() {
-            navigator.clipboard.writeText('itachi#8350');
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText('itachi#8350');
+            }
         }
     }
 };
@@ -124,6 +125,7 @@ footer {
             @include font-size('26px');
             &:hover {
                 color: #ffffff;
+                cursor: pointer;
             }
         }
     }
