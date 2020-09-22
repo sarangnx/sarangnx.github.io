@@ -54,7 +54,8 @@
         background: url('/img/curvybg-1.svg');
         display: block;
         width: 100%;
-        height: 150px;
+        height: calc(100vw * 7 / 80);
+        margin-top: 4rem;
         background-repeat: no-repeat;
         left: 0px;
         top: 0px;
