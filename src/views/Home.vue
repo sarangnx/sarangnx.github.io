@@ -12,7 +12,12 @@
 
 <script>
 export default {
-    name: 'Home'
+    name: 'Home',
+    mounted() {
+        // fallback for old browsers
+        const minHeight = window.innerHeight - 200;
+        document.querySelector('.home').style.minHeight = `${minHeight}px`;
+    }
 };
 </script>
 
