@@ -1,5 +1,5 @@
 <template>
-    <div class="wrapper">
+    <div class="curvy-bg">
         <div class="about col-12 col-sm-10 col-lg-8 pt-5 mx-auto">
             <h1>About Me</h1>
             <p>
@@ -60,23 +60,6 @@
 .mobile-view {
     .about::before {
         background-position: 0px calc(100% - 60px);
-    }
-}
-
-.wrapper {
-    &::after {
-        content: '';
-        background: url('/img/curvybg-1.svg');
-        display: block;
-        width: 100%;
-        height: calc(100vw * 7 / 80);
-        margin-top: 4rem;
-        background-repeat: no-repeat;
-        left: 0px;
-        top: 0px;
-        background-position: bottom;
-        background-size: contain;
-        z-index: -1;
     }
 }
 </style>
