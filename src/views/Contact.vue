@@ -8,13 +8,28 @@
                         <fa-icon icon="at" solid />
                         <span class="ml-3">sarangnkd@gmail.com</span>
                     </a>
-                    <a href="#">
+                    <a href="https://www.linkedin.com/in/sarang-n-270756170/">
                         <fa-icon icon="linkedin" brand />
                         <span class="ml-3">Sarang N</span>
                     </a>
                     <a href="#">
                         <fa-icon icon="discord" brand />
                         <span class="ml-3">itachi#8350</span>
+                    </a>
+                </div>
+                <div class="contacts mt-5">
+                    <h5 class="font-weight-bold">Profiles</h5>
+                    <a href="https://github.com/sarangnx" target="_blank">
+                        <fa-icon icon="github" brand />
+                        <span class="ml-3">sarangnx</span>
+                    </a>
+                    <a href="https://gitlab.com/sarangnx" target="_blank">
+                        <fa-icon icon="gitlab" brand />
+                        <span class="ml-3">sarangnx</span>
+                    </a>
+                    <a href="https://stackoverflow.com/users/9155456/srx" target="_blank">
+                        <fa-icon icon="stack-overflow" brand />
+                        <span class="ml-3">user:9155456 (srx)</span>
                     </a>
                 </div>
             </div>
@@ -30,10 +45,21 @@
     .contacts {
         display: flex;
         flex-direction: column;
+        align-items: flex-start;
         a {
             color: white;
-            padding: 0.5rem;
+            padding: 0.35rem;
             padding-left: 0px;
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            .fa-icon {
+                font-size: 20px;
+            }
+
+            &:hover {
+                color: #cacaca;
+            }
         }
     }
 }
