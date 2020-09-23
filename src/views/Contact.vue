@@ -4,7 +4,7 @@
             <h1>Contact</h1>
             <div class="mt-5">
                 <div class="contacts">
-                    <a href="#">
+                    <a href="mailto:sarangnkd@gmail.com" @click="copyToClipboard('sarangnkd@gmail.com')">
                         <fa-icon icon="at" solid />
                         <span class="ml-3">sarangnkd@gmail.com</span>
                     </a>
@@ -12,7 +12,7 @@
                         <fa-icon icon="linkedin" brand />
                         <span class="ml-3">Sarang N</span>
                     </a>
-                    <a href="#">
+                    <a @click="copyToClipboard('itachi#8350')">
                         <fa-icon icon="discord" brand />
                         <span class="ml-3">itachi#8350</span>
                     </a>
@@ -37,6 +37,18 @@
     </div>
 </template>
 
+<script>
+export default {
+    methods: {
+        copyToClipboard(text) {
+            if (navigator.clipboard) {
+                navigator.clipboard.writeText(text);
+            }
+        }
+    }
+};
+</script>
+
 <style lang="scss">
 .contact {
     h1 {
@@ -53,6 +65,7 @@
             display: flex;
             align-items: center;
             text-decoration: none;
+            cursor: pointer;
             .fa-icon {
                 font-size: 20px;
             }
