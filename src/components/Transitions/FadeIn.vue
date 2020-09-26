@@ -3,6 +3,7 @@
         :is="componentType"
         :enter-active-class="`${enterActiveClass} animated faster`"
         :leave-active-class="`${leaveActiveClass} animated faster`"
+        move-class="move"
     >
         <slot></slot>
     </component>
@@ -50,3 +51,9 @@ export default {
     }
 };
 </script>
+
+<style>
+.move {
+    transition: transform 0.3s ease-out;
+}
+</style>
