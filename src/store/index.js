@@ -1,8 +1,8 @@
 import { createStore } from 'vuex';
+import notifications from './modules/notifications';
 
 export default createStore({
-    state: {},
-    mutations: {},
-    actions: {},
-    modules: {}
+    modules: {
+        notifications
+    }
 });
