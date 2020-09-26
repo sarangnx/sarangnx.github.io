@@ -4,7 +4,7 @@
             <h1>Contact</h1>
             <div class="mt-5">
                 <div class="contacts">
-                    <a href="mailto:sarangnkd@gmail.com" @click="copyToClipboard('sarangnkd@gmail.com', 'EMail ID')">
+                    <a href="mailto:sarangnkd@gmail.com" @click="copyToClipboard('sarangnkd@gmail.com', 'email')">
                         <fa-icon icon="at" type="fas" />
                         <span class="ml-3">sarangnkd@gmail.com</span>
                     </a>
@@ -12,7 +12,7 @@
                         <fa-icon icon="linkedin" type="fab" />
                         <span class="ml-3">Sarang N</span>
                     </a>
-                    <a href="#" @click.prevent="copyToClipboard('itachi#8350', 'Discord Username')">
+                    <a href="#" @click.prevent="copyToClipboard('itachi#8350', 'discord')">
                         <fa-icon icon="discord" type="fab" />
                         <span class="ml-3">itachi#8350</span>
                     </a>
@@ -43,7 +43,11 @@ export default {
         copyToClipboard(text, type) {
             if (navigator.clipboard) {
                 navigator.clipboard.writeText(text);
-                this.$success(`${type} copied to clipboard`);
+                let message =
+                    type === 'email'
+                        ? { message: `Email ID copied to clipboard`, icon: 'at', iconType: 'fas' }
+                        : { message: `Discord ID copied to clipboard`, icon: 'discord', iconType: 'fab' };
+                this.$success(message);
             }
         }
     }

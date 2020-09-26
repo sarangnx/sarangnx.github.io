@@ -51,7 +51,7 @@ export default {
         copyToClipboard() {
             if (navigator.clipboard) {
                 navigator.clipboard.writeText('itachi#8350');
-                this.$success('Discord Username copied to clipboard');
+                this.$success({ message: `Discord ID copied to clipboard`, icon: 'discord', iconType: 'fab' });
             }
         }
     }
