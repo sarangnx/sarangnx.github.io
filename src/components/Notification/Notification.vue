@@ -2,7 +2,7 @@
     <div class="alert" :class="[verticalAlign, horizontalAlign, alertType]" :style="customPosition" @click="tryClose">
         <template v-if="icon || $slots.icon">
             <slot name="icon">
-                <fa-icon :icon="icon" size="2x" />
+                <fa-icon :icon="icon" :type="iconType" size="2x" />
             </slot>
         </template>
         <div class="d-flex flex-column px-3">
@@ -30,6 +30,7 @@ export default {
         message: String,
         title: String,
         icon: String,
+        iconType: String,
         verticalAlign: {
             type: String,
             default: 'top',
