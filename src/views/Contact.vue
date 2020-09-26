@@ -4,15 +4,15 @@
             <h1>Contact</h1>
             <div class="mt-5">
                 <div class="contacts">
-                    <a href="mailto:sarangnkd@gmail.com" @click="copyToClipboard('sarangnkd@gmail.com')">
+                    <a href="mailto:sarangnkd@gmail.com" @click="copyToClipboard('sarangnkd@gmail.com', 'EMail ID')">
                         <fa-icon icon="at" solid />
                         <span class="ml-3">sarangnkd@gmail.com</span>
                     </a>
-                    <a href="https://www.linkedin.com/in/sarang-n-270756170/">
+                    <a href="https://www.linkedin.com/in/sarang-n-270756170/" target="_blank">
                         <fa-icon icon="linkedin" brand />
                         <span class="ml-3">Sarang N</span>
                     </a>
-                    <a @click="copyToClipboard('itachi#8350')">
+                    <a href="#" @click.prevent="copyToClipboard('itachi#8350', 'Discord Username')">
                         <fa-icon icon="discord" brand />
                         <span class="ml-3">itachi#8350</span>
                     </a>
@@ -40,9 +40,10 @@
 <script>
 export default {
     methods: {
-        copyToClipboard(text) {
+        copyToClipboard(text, type) {
             if (navigator.clipboard) {
                 navigator.clipboard.writeText(text);
+                this.$success(`${type} copied to clipboard`);
             }
         }
     }
