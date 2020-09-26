@@ -1,16 +1,16 @@
 <template>
     <nav class="bottom-nav">
         <router-link class="px-2" to="/about">
-            <fa-icon icon="user-alt" solid />
+            <fa-icon icon="user-alt" type="fas" />
         </router-link>
         <router-link class="px-2" to="/skills">
-            <fa-icon icon="code" solid />
+            <fa-icon icon="code" type="fas" />
         </router-link>
         <router-link class="px-2" to="/works">
-            <fa-icon icon="briefcase" solid />
+            <fa-icon icon="briefcase" type="fas" />
         </router-link>
         <router-link class="px-2" to="/contact">
-            <fa-icon icon="envelope" solid />
+            <fa-icon icon="envelope" type="fas" />
         </router-link>
     </nav>
 </template>

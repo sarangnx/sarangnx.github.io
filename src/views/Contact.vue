@@ -5,30 +5,30 @@
             <div class="mt-5">
                 <div class="contacts">
                     <a href="mailto:sarangnkd@gmail.com" @click="copyToClipboard('sarangnkd@gmail.com', 'EMail ID')">
-                        <fa-icon icon="at" solid />
+                        <fa-icon icon="at" type="fas" />
                         <span class="ml-3">sarangnkd@gmail.com</span>
                     </a>
                     <a href="https://www.linkedin.com/in/sarang-n-270756170/" target="_blank">
-                        <fa-icon icon="linkedin" brand />
+                        <fa-icon icon="linkedin" type="fab" />
                         <span class="ml-3">Sarang N</span>
                     </a>
                     <a href="#" @click.prevent="copyToClipboard('itachi#8350', 'Discord Username')">
-                        <fa-icon icon="discord" brand />
+                        <fa-icon icon="discord" type="fab" />
                         <span class="ml-3">itachi#8350</span>
                     </a>
                 </div>
                 <div class="contacts mt-5">
                     <h5 class="font-weight-bold">Profiles</h5>
                     <a href="https://github.com/sarangnx" target="_blank">
-                        <fa-icon icon="github" brand />
+                        <fa-icon icon="github" type="fab" />
                         <span class="ml-3">sarangnx</span>
                     </a>
                     <a href="https://gitlab.com/sarangnx" target="_blank">
-                        <fa-icon icon="gitlab" brand />
+                        <fa-icon icon="gitlab" type="fab" />
                         <span class="ml-3">sarangnx</span>
                     </a>
                     <a href="https://stackoverflow.com/users/9155456/srx" target="_blank">
-                        <fa-icon icon="stack-overflow" brand />
+                        <fa-icon icon="stack-overflow" type="fab" />
                         <span class="ml-3">user:9155456 (srx)</span>
                     </a>
                 </div>

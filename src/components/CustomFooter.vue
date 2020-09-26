@@ -20,10 +20,10 @@
         </div>
         <div class="social">
             <a href="https://github.com/sarangnx" title="GitHub Profile" target="_blank" class="github">
-                <fa-icon icon="github" brand />
+                <fa-icon icon="github" type="fab" />
             </a>
             <a href="https://gitlab.com/sarangnx" title="GitLab Profile" target="_blank" class="gitlab">
-                <fa-icon icon="gitlab" brand />
+                <fa-icon icon="gitlab" type="fab" />
             </a>
             <a
                 href="https://stackoverflow.com/users/9155456/srx"
@@ -31,10 +31,10 @@
                 target="_blank"
                 class="stackoverflow"
             >
-                <fa-icon icon="stack-overflow" brand />
+                <fa-icon icon="stack-overflow" type="fab" />
             </a>
             <a title="Discord - itachi#8350" class="discord" @click.prevent="copyToClipboard">
-                <fa-icon icon="discord" brand />
+                <fa-icon icon="discord" type="fab" />
             </a>
         </div>
         <div class="made-with">
