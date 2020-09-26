@@ -1,5 +1,5 @@
 <template>
-    <span :class="[type, iconClass]" class="fa-icon"></span>
+    <span :class="[type, iconClass, faSize]" class="fa-icon"></span>
 </template>
 
 <script>
@@ -16,6 +16,10 @@ export default {
         },
         brand: {
             type: Boolean
+        },
+        size: {
+            type: String,
+            default: 'sm'
         }
     },
     computed: {
@@ -26,6 +30,9 @@ export default {
         },
         iconClass() {
             return `fa-${this.icon}`;
+        },
+        faSize() {
+            return `fa-${this.size}`;
         }
     }
 };
