@@ -8,26 +8,17 @@ export default {
         icon: {
             type: String
         },
-        regular: {
-            type: Boolean
-        },
-        solid: {
-            type: Boolean
-        },
-        brand: {
-            type: Boolean
-        },
         size: {
             type: String,
             default: 'sm'
+        },
+        type: {
+            type: String,
+            default: 'fas',
+            validator: value => ['fas', 'fab', 'far'].indexOf(value) !== -1
         }
     },
     computed: {
-        type() {
-            const type = this.regular ? 'far' : this.solid ? 'fas' : this.brand ? 'fab' : 'fas';
-
-            return type;
-        },
         iconClass() {
             return `fa-${this.icon}`;
         },
