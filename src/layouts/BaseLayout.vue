@@ -1,4 +1,7 @@
 <template>
+    <transition leave-active-class="slideOutRight animated faster">
+        <page-loading v-if="loading" />
+    </transition>
     <notifications />
     <navigation />
     <main :class="{ 'mobile-view': !$bp.smAndUp }">
@@ -11,12 +14,19 @@
 import Navigation from '@/components/Navigation';
 import CustomFooter from '@/components/CustomFooter';
 import Notifications from '@/components/Notification/Notifications';
+import PageLoading from '@/components/PageLoading';
 
 export default {
     components: {
         Navigation,
         CustomFooter,
-        Notifications
+        Notifications,
+        PageLoading
+    },
+    computed: {
+        loading() {
+            return this.$store.state.loader.loading;
+        }
     }
 };
 </script>
