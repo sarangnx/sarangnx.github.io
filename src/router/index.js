@@ -1,4 +1,5 @@
 import { createRouter, createWebHistory } from 'vue-router';
+import store from '@/store';
 
 const routes = [
     {
@@ -46,6 +47,11 @@ const router = createRouter({
     history: createWebHistory(process.env.BASE_URL),
     routes,
     scrollBehavior
+});
+
+router.beforeEach((to, from, next) => {
+    store.commit('loader/change', true);
+    next();
 });
 
 export default router;
