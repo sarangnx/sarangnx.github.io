@@ -7,6 +7,14 @@
     </div>
 </template>
 
+<script>
+import loader from '@/mixins/loader';
+
+export default {
+    mixins: [loader]
+};
+</script>
+
 <style lang="scss">
 .works {
     h1 {

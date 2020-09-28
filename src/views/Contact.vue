@@ -38,7 +38,10 @@
 </template>
 
 <script>
+import loader from '@/mixins/loader';
+
 export default {
+    mixins: [loader],
     methods: {
         copyToClipboard(text, type) {
             if (navigator.clipboard) {

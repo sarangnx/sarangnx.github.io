@@ -11,8 +11,11 @@
 </template>
 
 <script>
+import loader from '@/mixins/loader';
+
 export default {
     name: 'Home',
+    mixins: [loader],
     mounted() {
         // fallback for old browsers
         const minHeight = window.innerHeight - 200;

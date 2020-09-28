@@ -35,6 +35,14 @@
     </div>
 </template>
 
+<script>
+import loader from '@/mixins/loader';
+
+export default {
+    mixins: [loader]
+};
+</script>
+
 <style lang="scss">
 .about {
     h1 {
