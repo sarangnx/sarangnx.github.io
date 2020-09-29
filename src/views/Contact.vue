@@ -3,8 +3,8 @@
         <div class="contact col-12 col-sm-10 col-lg-8 pt-5 mx-auto">
             <h1>Contact</h1>
             <div class="d-flex flex-column flex-md-row">
-                <div class="mt-5 col-12 col-md-6 p-0">
-                    <div class="contacts mb-5">
+                <div class="mt-2 col-12 col-md-6 p-0 d-flex flex-column justify-content-between">
+                    <div class="contacts mb-5 mb-md-0">
                         <a href="mailto:sarangnkd@gmail.com" @click="copyToClipboard('sarangnkd@gmail.com', 'email')">
                             <fa-icon icon="at" type="fas" />
                             <span class="ml-3">sarangnkd@gmail.com</span>
@@ -18,7 +18,7 @@
                             <span class="ml-3">itachi#8350</span>
                         </a>
                     </div>
-                    <div class="contacts mt-5">
+                    <div class="contacts">
                         <h5 class="font-weight-bold">Profiles</h5>
                         <a href="https://github.com/sarangnx" target="_blank">
                             <fa-icon icon="github" type="fab" />
@@ -35,7 +35,7 @@
                     </div>
                 </div>
                 <div class="col-12 col-md-6 p-0 contact-form-wrapper">
-                    <div id="contact-form">
+                    <div id="contact-form" :class="{ 'w-100': $bp.smAndDown }">
                         <div class="form--group">
                             <input type="text" id="name" class="form--field" />
                             <label for="name" class="form--label">Name</label>
@@ -45,8 +45,11 @@
                             <label for="email" class="form--label">Email</label>
                         </div>
                         <div class="form--group">
-                            <textarea rows="4" id="message" class="form--field"></textarea>
+                            <textarea rows="2" id="message" class="form--field"></textarea>
                             <label for="message" class="form--label">Message</label>
+                        </div>
+                        <div class="form--group">
+                            <button class="send">Send</button>
                         </div>
                     </div>
                 </div>
@@ -114,7 +117,8 @@ export default {
         position: relative;
         padding: 15px 0px;
     }
-    .form--field {
+    .form--field,
+    .send {
         width: 100%;
         border: 0px;
         font-size: 0.9rem;
@@ -139,6 +143,9 @@ export default {
     textarea {
         resize: none;
     }
+    .send {
+        background: #08a045;
+    }
 }
 .contact-form-wrapper {
     display: flex;
@@ -148,10 +155,7 @@ export default {
 .mobile-view {
     .contact-form-wrapper {
         justify-content: center;
-        margin-top: 7rem;
-    }
-    #contact-form {
-        width: 100%;
+        margin-top: 4rem;
     }
 }
 </style>
