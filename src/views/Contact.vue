@@ -34,7 +34,13 @@
                         </a>
                     </div>
                 </div>
-                <div class="col-12 col-md-6 p-0 contact-form-wrapper">
+                <div
+                    :class="[
+                        'col-12 col-md-6 p-0 mt-5 mt-md-0',
+                        'd-flex align-items-center',
+                        'justify-content-center justify-content-md-end'
+                    ]"
+                >
                     <div id="contact-form" :class="{ 'w-100': $bp.smAndDown }">
                         <div class="form--group">
                             <input type="text" id="name" class="form--field" />
@@ -145,17 +151,6 @@ export default {
     }
     .send {
         background: #08a045;
-    }
-}
-.contact-form-wrapper {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-}
-.mobile-view {
-    .contact-form-wrapper {
-        justify-content: center;
-        margin-top: 4rem;
     }
 }
 </style>
