@@ -36,11 +36,13 @@
                 </div>
                 <div
                     :class="[
-                        'col-12 col-md-6 p-0 mt-5 mt-md-0',
-                        'd-flex align-items-center',
+                        'contact-form-wrapper',
+                        'col-12 col-md-6 p-0',
+                        'd-flex align-items-center flex-column',
                         'justify-content-center justify-content-md-end'
                     ]"
                 >
+                    <h6 class="px-3">Leave a message</h6>
                     <div id="contact-form" :class="{ 'w-100': $bp.smAndDown }">
                         <div class="form--group">
                             <input type="text" id="name" class="form--field" />
@@ -111,11 +113,18 @@ export default {
         }
     }
 }
+.contact-form-wrapper {
+    #contact-form,
+    h6 {
+        max-width: 400px;
+        width: 100%;
+    }
+}
 #contact-form {
     display: flex;
     flex-direction: column;
     background: #1f1f1f;
-    padding: 2rem;
+    padding: 1.2rem 2rem;
     border-radius: 10px;
     box-shadow: 4px 4px 4px #0b0b0b70;
 
@@ -151,6 +160,21 @@ export default {
     }
     .send {
         background: #08a045;
+        min-height: 55px;
+        &:active {
+            box-shadow: inset 4px 4px 4px rgba(0, 0, 0, 0.5), inset -4px -2px 10px rgba(5, 255, 105, 0.4) !important;
+            font-size: 0.87rem;
+        }
+    }
+}
+
+.contact-form-wrapper {
+    margin-top: 5rem !important;
+}
+
+@media (min-width: 768px) {
+    .contact-form-wrapper {
+        margin-top: -3rem !important;
     }
 }
 </style>
