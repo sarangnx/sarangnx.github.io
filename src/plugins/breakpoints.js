@@ -22,10 +22,10 @@ export default {
             height: 0,
             width: 0,
             thresholds: {
-                xs: 600,
-                sm: 960,
-                md: 1264,
-                lg: 1904
+                xs: 576,
+                sm: 768,
+                md: 992,
+                lg: 1200
             },
             vScrollBarWidth: 0
         });
