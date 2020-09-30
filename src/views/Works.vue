@@ -7,6 +7,8 @@
                     image="/img/projects/bifrost.png"
                     title="Bifrost - Save to Google Drive"
                     :tech="['nuxt.js', 'express.js', 'googleapis', 'heroku']"
+                    source="https://github.com/sarangnx/google-drive-download"
+                    website="https://google-drive-download.herokuapp.com/"
                 >
                     <template #description>
                         Bifrost is a service that helps you to download any files directly to Google Drive.

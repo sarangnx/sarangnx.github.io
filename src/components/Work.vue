@@ -12,6 +12,14 @@
             <div class="work-image">
                 <img :src="image" :alt="title" />
             </div>
+            <div class="overlay">
+                <a :href="website" target="_blank">
+                    <fa-icon icon="external-link-alt" type="fas" />
+                </a>
+                <a :href="source" target="_blank">
+                    <fa-icon icon="code-branch" type="fas" />
+                </a>
+            </div>
         </div>
         <div class="tech">
             <span v-for="(t, index) in tech" :key="index">{{ t }}</span>
@@ -25,12 +33,10 @@ export default {
         image: {
             type: String
         },
-        title: {
-            type: String
-        },
-        tech: {
-            type: Array
-        }
+        title: String,
+        tech: Array,
+        source: String,
+        website: String
     }
 };
 </script>
@@ -43,6 +49,7 @@ export default {
     }
 }
 .image {
+    position: relative;
     .work-image {
         width: 100%;
         border-radius: 10px;
@@ -51,6 +58,32 @@ export default {
             border-radius: 10px;
         }
         box-shadow: 4px 4px 5px rgba(0, 0, 0, 0.5);
+    }
+    .overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        height: 100%;
+        width: 100%;
+        background: #04040494;
+        border-radius: 10px;
+        display: flex;
+        justify-content: space-evenly;
+        align-items: center;
+        a {
+            border-radius: 50%;
+            height: 2em;
+            width: 2em;
+            background: white;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: black;
+        }
+        display: none;
+    }
+    &:hover .overlay {
+        display: flex;
     }
 }
 .tech {
