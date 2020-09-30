@@ -1,5 +1,5 @@
 <template>
-    <span :class="[type, iconClass, faSize]" class="fa-icon"></span>
+    <span :class="[type, iconClass, faSize]" class="fa-icon fa-fw"></span>
 </template>
 
 <script>
