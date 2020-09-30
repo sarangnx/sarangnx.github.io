@@ -56,10 +56,13 @@ export default {
 .tech {
     margin-top: 1.7em;
     margin-bottom: 5px;
+    display: flex;
+    flex-wrap: wrap;
+
     span {
         padding: 5px 10px;
         background: black;
-        margin: 0px 5px;
+        margin: 5px;
         font-size: 0.7rem;
         box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.7);
         border-radius: 5px;
