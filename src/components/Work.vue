@@ -12,11 +12,11 @@
             <div class="work-image">
                 <img :src="image" :alt="title" />
             </div>
-            <div class="overlay">
-                <a :href="website" target="_blank">
+            <div v-if="website || source" class="overlay">
+                <a v-if="website" :href="website" target="_blank">
                     <fa-icon icon="external-link-alt" type="fas" />
                 </a>
-                <a :href="source" target="_blank">
+                <a v-if="source" :href="source" target="_blank">
                     <fa-icon icon="code-branch" type="fas" />
                 </a>
             </div>
