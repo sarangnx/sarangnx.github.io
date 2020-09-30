@@ -1,5 +1,5 @@
 <template>
-    <div class="work">
+    <div class="work my-3">
         <div class="info">
             <h6 class="font-weight-bold">
                 {{ title }}
