@@ -45,19 +45,22 @@
                     <h6 class="px-3">Leave a message</h6>
                     <div id="contact-form" :class="{ 'w-100': $bp.smAndDown }">
                         <div class="form--group">
-                            <input type="text" id="name" class="form--field" />
+                            <input type="text" id="name" class="form--field" v-model="name" />
                             <label for="name" class="form--label">Name</label>
+                            <span class="input-error" v-if="errors && errors.name">{{ errors.name }}</span>
                         </div>
                         <div class="form--group">
-                            <input type="email" id="email" class="form--field" />
+                            <input type="email" id="email" class="form--field" v-model="email" />
                             <label for="email" class="form--label">Email</label>
+                            <span class="input-error" v-if="errors && errors.email">{{ errors.email }}</span>
                         </div>
                         <div class="form--group">
-                            <textarea rows="2" id="message" class="form--field"></textarea>
+                            <textarea rows="2" id="message" class="form--field" v-model="message"></textarea>
                             <label for="message" class="form--label">Message</label>
+                            <span class="input-error" v-if="errors && errors.message">{{ errors.message }}</span>
                         </div>
                         <div class="form--group">
-                            <button class="send">Send</button>
+                            <button class="send" @click="submitForm" disabled>Send</button>
                         </div>
                     </div>
                 </div>
@@ -67,12 +70,14 @@
 </template>
 
 <script>
+import { ref, watch } from 'vue';
+import { isEmail, isLength, isEmpty, trim } from 'validator';
 import loader from '@/mixins/loader';
 
 export default {
     mixins: [loader],
-    methods: {
-        copyToClipboard(text, type) {
+    setup() {
+        function copyToClipboard(text, type) {
             if (navigator.clipboard) {
                 navigator.clipboard.writeText(text);
                 let message =
@@ -82,6 +87,58 @@ export default {
                 this.$success(message);
             }
         }
+
+        const name = ref('');
+        const email = ref('');
+        const message = ref('');
+        const errors = ref({});
+
+        // Watchers to reset validation on user input
+        watch([name, email, message], () => {
+            errors.value.name = null;
+            errors.value.email = null;
+            errors.value.message = null;
+        });
+
+        async function submitForm() {
+            errors.value.name = isEmpty(name.value) ? 'Name Required' : null;
+            errors.value.email = isEmpty(email.value)
+                ? 'Email Required'
+                : isEmail(email.value)
+                ? null
+                : 'Invalid Email';
+            errors.value.message = isEmpty(message.value)
+                ? 'Message Requried'
+                : isLength(message.value, { min: 10 })
+                ? null
+                : 'Too short.';
+
+            if (errors.value.name || errors.value.email || errors.value.message) {
+                return this.$error('All Fields Required.');
+            }
+            // END Validation
+
+            // send POST Request to GCP Function
+            const response = await fetch('https://asia-south1-srngdev.cloudfunctions.net/submitform', {
+                method: 'POST',
+                headers: { 'Content-Type': 'application/json' },
+                body: JSON.stringify({
+                    name: trim(name.value),
+                    email: trim(email.value),
+                    message: trim(message.value)
+                })
+            });
+
+            const res = await response.json();
+            response.status != 200 ? this.$error(res.message) : this.$success(res.message);
+
+            // reset form
+            name.value = '';
+            email.value = '';
+            message.value = '';
+        }
+
+        return { name, email, message, errors, submitForm, copyToClipboard };
     }
 };
 </script>
@@ -165,6 +222,24 @@ export default {
             box-shadow: inset 4px 4px 4px rgba(0, 0, 0, 0.5), inset -4px -2px 10px rgba(5, 255, 105, 0.4) !important;
             font-size: 0.87rem;
         }
+        &:disabled,
+        &[disabled],
+        &:disabled:active {
+            font-size: 0.9rem;
+            box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2) !important;
+            opacity: 0.5;
+        }
+    }
+    .input-error {
+        position: absolute;
+        max-width: 70%;
+        right: 5%;
+        background: red;
+        top: 0px;
+        border-radius: 10px;
+        font-size: 0.7rem;
+        padding: 0.3rem;
+        z-index: 5;
     }
 }
 
