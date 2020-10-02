@@ -8,6 +8,11 @@
                     </router-link>
                     <span>sarang</span>
                 </div>
+                <div class="quick-links">
+                    <a href="https://github.com/sarangnx/sarangnx.github.io" title="GitHub Repo" target="_blank">
+                        &lt;source code/&gt;
+                    </a>
+                </div>
             </div>
             <div class="quick-links col-12 col-md-3 p-0">
                 <h5>Quick Links</h5>
@@ -19,21 +24,16 @@
             </div>
         </div>
         <div class="social">
-            <a href="https://github.com/sarangnx" title="GitHub Profile" target="_blank" class="github">
+            <a href="https://github.com/sarangnx" title="GitHub Profile" target="_blank">
                 <fa-icon icon="github" type="fab" />
             </a>
-            <a href="https://gitlab.com/sarangnx" title="GitLab Profile" target="_blank" class="gitlab">
+            <a href="https://gitlab.com/sarangnx" title="GitLab Profile" target="_blank">
                 <fa-icon icon="gitlab" type="fab" />
             </a>
-            <a
-                href="https://stackoverflow.com/users/9155456/srx"
-                title="Stack Overflow Profile"
-                target="_blank"
-                class="stackoverflow"
-            >
+            <a href="https://stackoverflow.com/users/9155456/srx" title="Stack Overflow Profile" target="_blank">
                 <fa-icon icon="stack-overflow" type="fab" />
             </a>
-            <a title="Discord - itachi#8350" class="discord" @click.prevent="copyToClipboard">
+            <a title="Discord - itachi#8350" @click.prevent="copyToClipboard">
                 <fa-icon icon="discord" type="fab" />
             </a>
         </div>
@@ -94,9 +94,10 @@ footer {
                 font-weight: bold;
             }
 
-            a {
+            a,
+            span {
                 color: #ffffff;
-                @include font-size('15px');
+                @include font-size('15px !important');
             }
         }
     }
