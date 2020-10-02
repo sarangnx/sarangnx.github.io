@@ -60,7 +60,15 @@
                             <span class="input-error" v-if="errors && errors.message">{{ errors.message }}</span>
                         </div>
                         <div class="form--group">
-                            <button class="send" @click="submitForm" disabled>Send</button>
+                            <button class="send" @click="submitForm" :disabled="loading">
+                                <template v-if="loading">
+                                    Sending
+                                    <fa-icon icon="spinner" type="fas" size="lg" class="fa-spin" />
+                                </template>
+                                <template v-else>
+                                    Send
+                                </template>
+                            </button>
                         </div>
                     </div>
                 </div>
@@ -92,6 +100,7 @@ export default {
         const email = ref('');
         const message = ref('');
         const errors = ref({});
+        const loading = ref(false);
 
         // Watchers to reset validation on user input
         watch([name, email, message], () => {
@@ -118,6 +127,8 @@ export default {
             }
             // END Validation
 
+            loading.value = true;
+
             // send POST Request to GCP Function
             const response = await fetch('https://asia-south1-srngdev.cloudfunctions.net/submitform', {
                 method: 'POST',
@@ -136,9 +147,10 @@ export default {
             name.value = '';
             email.value = '';
             message.value = '';
+            loading.value = false;
         }
 
-        return { name, email, message, errors, submitForm, copyToClipboard };
+        return { name, email, message, errors, submitForm, loading, copyToClipboard };
     }
 };
 </script>
@@ -227,7 +239,7 @@ export default {
         &:disabled:active {
             font-size: 0.9rem;
             box-shadow: 4px 4px 4px rgba(0, 0, 0, 0.2) !important;
-            opacity: 0.5;
+            opacity: 0.7;
         }
     }
     .input-error {
